@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    button {
+      padding: 10px;
+    }
+
+    .bg-red {
+      background-color: red;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+    <button id="button1">
+      Turn it red!
+    </button>
+    <button id="button2">
+      Turn it white!
+    </button>
+    <script> 
+     // Do Stuff Here
+     window.updateTheBackground = function(className) {
+        let length = document.body.classList.length;
+
+        if(length > 0){
+            let index = document.body.classList.item(0);
+            document.body.classList.remove(index);
+        }
+        document.body.classList.add(className);
+     }
+
+     document.body.addEventListener('click', e =>{
+         if(e.target.id == "button1"){
+             window.updateTheBackground('bg-red')
+         }
+
+         if (e.target.id == "button2"){
+             window.updateTheBackground('bg-white')
+         }
+     })
+    </script>
+</body>
+</html>
